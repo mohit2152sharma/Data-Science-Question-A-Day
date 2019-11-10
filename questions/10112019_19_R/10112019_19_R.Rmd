@@ -1,0 +1,55 @@
+---
+title: "Question 19"
+author: "Mohit"
+date: "10 November 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE)
+```
+
+#### Question
+
+Could you guess which of the following option would run faster in R?
+
+##### Option A
+```{r option_A,warning=FALSE}
+option_A = function(x=0){
+  for(i in 1:100){
+    x=x+i
+    return(x)
+  }
+}
+
+```
+##### Option B
+```{r option_B}
+option_B = function(y=0){
+  for(i in 1:100){
+    ((((((((((y=y+i))))))))))
+    return(y)
+  }
+}
+
+```
+
+
+#### Answer
+
+Option A would run faster. As R treats `(` as an operator and at each occurence of `(`, it has to do a lookup. As you can see from the following benchmark test option B is almost thrice as slow as option A.
+Moreover the code in the option can further be optimized. As you can see in, with each iteration of foor loop we are returning x, which should be avoided if x has to be returned only once.
+```{r benchmark,warning=FALSE}
+library(microbenchmark)
+print(
+  summary(
+    microbenchmark(
+      option_A(x=0),
+      option_B(y=0),
+      times = 100,
+      unit = 'ns' #nanosecond
+    )
+  )
+)
+
+```
