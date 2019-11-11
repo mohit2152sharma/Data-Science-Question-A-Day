@@ -1,0 +1,30 @@
+---
+title: "Question 20"
+author: "Mohit Sharma"
+date: "11 November 2019"
+output: html_document
+---
+#### Question
+Given the following normal distributions, what can you say about the green curve and red curve? (Assuming same number of obs for both curves and sd refers to std. deviation)
+
+  1. $sd(red$ $curve)$ $>$ $sd(green$ $curve)$
+  2. $sd(red$ $curve)$ $<$ $sd(green$ $curve)$
+  3. $sd(green$ $curve)$ $=$ $sd(red$ $curve)$
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(data = data.frame(x = c(-5,5)), aes(x)) +
+  stat_function(fun = dnorm, n = 50, args = list(mean=0,sd=1), col='red') +
+  stat_function(fun = dnorm, n = 50, args = list(mean=0, sd=2), col='green') +
+  scale_y_continuous(breaks=NULL)
+
+ggsave('normal_curve.png')
+```
+
+#### Answer
+Green curve is more dispersed than red curve hence it would have higher standard deviation.

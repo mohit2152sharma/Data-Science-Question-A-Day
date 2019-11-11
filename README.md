@@ -7,3 +7,4 @@ You can use the following links, to access the questions and answers.
 | Question Number | Date | Link |
 | :---: | :---: | :---: |
 | 19 | 10-11-2019 | [Question](questions/10112019_19_R/10112019_19_R.html) |
+| 20 | 11-11-2019 | [Question](questions/11112019_20_DS/11112019_20_DS.html) |
