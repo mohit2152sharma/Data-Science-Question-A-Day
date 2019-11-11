@@ -1,6 +1,6 @@
 ---
 title: "Question 19"
-author: "Mohit"
+author: "Mohit Sharma"
 date: "10 November 2019"
 output: html_document
 ---
@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE,warning=FALSE)
 #### Question
 
 Could you guess which of the following option would run faster in R?
+
+*Source: <a href='https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r'>stackoverflow</a>*
 
 ##### Option A
 ```{r option_A,warning=FALSE}
@@ -37,7 +39,7 @@ option_B = function(y=0){
 
 #### Answer
 
-Option A would run faster. As R treats `(` as an operator and at each occurence of `(`, it has to do a lookup. As you can see from the following benchmark test option B is almost thrice as slow as option A.
+Option A would run faster. As R treats `(` as an operator and at each occurence of `(`, it has to do a name lookup. As you can see from the following benchmark test, option B is slower than option A.
 Moreover the code in the option can further be optimized. As you can see in, with each iteration of foor loop we are returning x, which should be avoided if x has to be returned only once.
 ```{r benchmark,warning=FALSE}
 library(microbenchmark)

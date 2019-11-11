@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Mohit" />
+<meta name="author" content="Mohit Sharma" />
 
 <meta name="date" content="2019-11-10" />
 
@@ -191,7 +191,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Question 19</h1>
-<h4 class="author">Mohit</h4>
+<h4 class="author">Mohit Sharma</h4>
 <h4 class="date">10 November 2019</h4>
 
 </div>
@@ -200,6 +200,7 @@ $(document).ready(function () {
 <div id="question" class="section level4">
 <h4>Question</h4>
 <p>Could you guess which of the following option would run faster in R?</p>
+<p><em>Source: <a href="https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r">stackoverflow</a></em></p>
 <div id="option-a" class="section level5">
 <h5>Option A</h5>
 <pre class="r"><code>option_A = function(x=0){
@@ -221,7 +222,7 @@ $(document).ready(function () {
 </div>
 <div id="answer" class="section level4">
 <h4>Answer</h4>
-<p>Option A would run faster. As R treats <code>(</code> as an operator and at each occurence of <code>(</code>, it has to do a lookup. As you can see from the following benchmark test option B is almost thrice as slow as option A. Moreover the code in the option can further be optimized. As you can see in, with each iteration of foor loop we are returning x, which should be avoided if x has to be returned only once.</p>
+<p>Option A would run faster. As R treats <code>(</code> as an operator and at each occurence of <code>(</code>, it has to do a name lookup. As you can see from the following benchmark test, option B is slower than option A. Moreover the code in the option can further be optimized. As you can see in, with each iteration of foor loop we are returning x, which should be avoided if x has to be returned only once.</p>
 <pre class="r"><code>library(microbenchmark)
 print(
   summary(
@@ -233,9 +234,9 @@ print(
     )
   )
 )</code></pre>
-<pre><code>##              expr min  lq      mean median   uq      max neval
-## 1 option_A(x = 0) 300 401  32642.05  650.5 1201  3177902   100
-## 2 option_B(y = 0) 300 401 113681.05  501.0  901 11289701   100</code></pre>
+<pre><code>##              expr min  lq   mean median   uq      max neval
+## 1 option_A(x = 0) 600 800  73150   1100 1300  6365500   100
+## 2 option_B(y = 0) 600 800 231210   1000 1200 20936500   100</code></pre>
 </div>
 
 
