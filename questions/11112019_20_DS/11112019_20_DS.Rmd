@@ -28,3 +28,28 @@ ggsave('normal_curve.png')
 
 #### Answer
 Standard deviation is a measure of variability. It tells how much variation or dispersion there is from the average or expected value. Normal distributions with low standard deviation tend to be closer to mean, whereas normal distributions with high standard deviation tend to be dispersed away from mean. In this question both the curves have mean zero, but green curve is more dispersed than red curve hence it has higher standard deviation.
+
+*Let's see how a curve changes with increasing standard deviation*
+
+```{r animation}
+library(dplyr)
+library(tidyr)
+
+normal_dist = vector('list', 5)
+for(i in 1:5){
+  normal_dist[[tag_name = i]] = dnorm(seq(-5,5,length=50),mean=0, sd=i)
+  names(normal_dist)[[i]] = paste('std. deviation', i, sep=' ')
+}
+
+df = as_tibble(normal_dist) %>%
+  bind_cols('x'=seq(-5,5,length=50)) %>%
+  gather('sd', 'value', -x)
+
+ggplot(data = df, aes(x,col=sd)) +
+  geom_line(aes(y=value)) + 
+  scale_y_continuous(breaks=NULL) +
+  labs(col = 'std. deviation')
+
+```
+
+As we can see from the above plot, as standard deviation increases so does the dispersion.
