@@ -6,7 +6,7 @@ You can use the following links, to access the questions and answers.
 
 | Question Number | Date | Link |
 | :---: | :---: | :---: |
-| 19 | 10-11-2019 | [Question](questions/10112019_19_R/10112019_19_R.html) |
-| 20 | 11-11-2019 | [Question](questions/11112019_20_DS/11112019_20_DS.html) |
-| 21 | 12-11-2019 | [Question](questions/12112019_21_DS/12112019_21_DS.html) |
-| 22 | 13-11-2019 | [Question](questions/13112019_22_R/13112019_22_R.html) |
+| 19 | 10-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/10112019_19_R/10112019_19_R.html) |
+| 20 | 11-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/11112019_20_DS/11112019_20_DS.html) |
+| 21 | 12-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/12112019_21_DS/12112019_21_DS.html) |
+| 22 | 13-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/13112019_22_R/13112019_22_R.html) |
