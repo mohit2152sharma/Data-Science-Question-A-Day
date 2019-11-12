@@ -199,35 +199,16 @@ $(document).ready(function () {
 
 <div id="question" class="section level4">
 <h4>Question</h4>
-<p>The difference between <span class="math inline">\(lm(y\)</span> ~ <span class="math inline">\(x*z)\)</span> and <span class="math inline">\(lm(y\)</span> ~ <span class="math inline">\(I(x*z))\)</span>, assuming x and z be numeric values is:</p>
+<p>The true parameter (unknown to me) is x. I sampled data and construct a 95% confidence interval. Is the following statement true: 95% of time the sample will contain x.</p>
 <ol style="list-style-type: decimal">
-<li>eq 1 has interaction term</li>
-<li>eq 2 has interaction term</li>
-<li>Both are same, diff by chance</li>
+<li>True</li>
+<li>False</li>
 <li>I don’t know</li>
 </ol>
 </div>
 <div id="answer" class="section level4">
 <h4>Answer</h4>
-<p>Equation 1 has interaction term whereas equation 2 doesn’t. <span class="math inline">\(x*z\)</span> indicates the cross of x and z which is equivalent to <span class="math inline">\(x + z + x:z\)</span> where <span class="math inline">\(x:z\)</span> indicates the set of terms obtained by taking the interactions of all terms in fist with all terms in second <em>(Source: lm documentation)</em>. Equation 2 doesn’t have interaction term. <span class="math inline">\(I(x*z)\)</span> is equivalent to the product of x and z. In function formula, I is used to inhibit the interpretation of operators as formula operators, so they are used as arithmetical operators only.</p>
-<p><em>An Example</em></p>
-<pre class="r"><code>library(MASS)
-
-model1 = lm(medv~lstat*age, data=Boston)
-model2 = lm(medv~I(lstat*age), data=Boston)</code></pre>
-<p>Model 1 coefficients</p>
-<pre class="r"><code>summary(model1)$coefficients</code></pre>
-<pre><code>##                  Estimate  Std. Error     t value     Pr(&gt;|t|)
-## (Intercept) 36.0885359346 1.469835463 24.55277263 4.907116e-88
-## lstat       -1.3921168406 0.167455532 -8.31335236 8.780730e-16
-## age         -0.0007208595 0.019879171 -0.03626205 9.710878e-01
-## lstat:age    0.0041559518 0.001851795  2.24428275 2.524911e-02</code></pre>
-<p>Model 2 coefficients</p>
-<pre class="r"><code>summary(model2)$coefficients</code></pre>
-<pre><code>##                    Estimate   Std. Error   t value      Pr(&gt;|t|)
-## (Intercept)    30.158863119 0.4828239803  62.46347 1.985512e-239
-## I(lstat * age) -0.007714613 0.0003798643 -20.30886  1.922769e-67</code></pre>
-<p>As we can see from the above example, the models are giving different coefficients because of the difference in formula.</p>
+<p>True, 95% confidence interval is defined as a range of values such that, with 95% probability, the range will contain the unknown true parameter.</p>
 </div>
 
 

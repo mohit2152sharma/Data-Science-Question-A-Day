@@ -8,4 +8,5 @@ You can use the following links, to access the questions and answers.
 | :---: | :---: | :---: |
 | 19 | 10-11-2019 | [Question](questions/10112019_19_R/10112019_19_R.html) |
 | 20 | 11-11-2019 | [Question](questions/11112019_20_DS/11112019_20_DS.html) |
-| 21 | 12-11-2019 | [Question](questions/12112019_21_R/12112019_21_R.html) |
+| 21 | 12-11-2019 | [Question](questions/12112019_21_DS/12112019_21_DS.html) |
+| 22 | 13-11-2019 | [Question](questions/13112019_22_R/13112019_22_R.html) |

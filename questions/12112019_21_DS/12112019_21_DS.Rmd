@@ -1,0 +1,21 @@
+---
+title: "Question 21"
+author: "Mohit"
+date: "12 November 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+#### Question
+
+The true parameter (unknown to me) is x. I sampled data and construct a 95% confidence interval. Is the following statement true: 95% of time the sample will contain x.
+
+  1. True
+  2. False
+  3. I don't know
+  
+#### Answer
+True, 95% confidence interval is defined as a range of values such that, with 95% probability, the range will contain the unknown true parameter. 
