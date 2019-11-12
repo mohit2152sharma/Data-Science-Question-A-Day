@@ -1,0 +1,44 @@
+---
+title: "Question 21"
+author: "Mohit"
+date: "12 November 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+#### Question
+
+The difference between $lm(y$ ~ $x*z)$ and $lm(y$ ~ $I(x*z))$, assuming x and z be numeric values is:
+
+  1. eq 1 has interaction term 
+  2. eq 2 has interaction term
+  3. Both are same, diff by chance
+  4. I don't know
+  
+#### Answer
+Equation 1 has interaction term whereas equation 2 doesn't. $x*z$ indicates the cross of x and z which is equivalent to $x + z + x:z$ where $x:z$ indicates the set of terms obtained by taking the interactions of all terms in fist with all terms in second *(Source: lm documentation)*. 
+Equation 2 doesn't have interaction term. $I(x*z)$ is equivalent to the product of x and z.
+In function formula, I is used to inhibit the interpretation of operators as formula operators, so they are used as arithmetical operators only.
+
+*An Example*
+```{r}
+library(MASS)
+
+model1 = lm(medv~lstat*age, data=Boston)
+model2 = lm(medv~I(lstat*age), data=Boston)
+```
+
+Model 1 coefficients
+```{r}
+summary(model1)$coefficients
+```
+
+Model 2 coefficients
+```{r}
+summary(model2)$coefficients
+```
+
+As we can see from the above example, the models are giving different coefficients because of the difference in formula.
