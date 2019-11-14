@@ -1,0 +1,42 @@
+---
+title: "Question 23"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site and Repository](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/)
+date: "14 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+#### Question
+
+Out of 10k obs in my sample, I have 1k obs belonging to category 1 and 9k obs to category 0. I build a binary classifier model that always predicts category 0 and got 90% accuracy on my training set. Is this a good model?
+
+#### Answer
+
+No the model is not good. There are two types of error being made here.
+
+  > One, the model incorrectly assigns the variable of category 1 to category 0 and the second being, model incorrectly assigns the variable of category 0 to category 1.
+
+It's often of interest to see which error is being made. Take for example if you are building a spam mail detection system. Your sample includes lots of examples of spam mails whereas very few examples of not-spam mail, let's say 9k spam mail examples and 1k not-spam mail example. If you happen to build a basic classifier model which always predict spam, even though the model is accurate 90% of time, it is not useful because this model would classify all the useful not-spam mail to spam mail.
+
+A confusion matrix is a simple and useful way to display this information.
+
+```{r confusion matrix}
+actual = factor(c(1, 1, 0, 1, 0, 0, 1, 0, 0, 0), labels=c('Spam', 'Not Spam'))
+predicted = factor(c(1, 0, 0, 1, 0, 0, 1, 1, 1, 0), labels=c('Spam', 'Not Spam'))
+
+cm = caret::confusionMatrix(predicted, actual)
+cm$table
+```
+
+In the above sample example, the columns indicate our true values whereas rows indicate our predicted values. So the way to read this table would be: Out of 6 Spam emails, our model predicted 4 emails as spam and 2 as Not spam. Similary, Out of 4 Not spam emails, our model predicted 1 email as spam email whereas 3 as not spam mails.
+
+If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>

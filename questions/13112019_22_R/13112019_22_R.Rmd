@@ -1,6 +1,8 @@
 ---
 title: "Question 22"
-author: "Mohit"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site and Repository](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/)
 date: "13 November 2019"
 output: html_document
 ---
@@ -42,3 +44,5 @@ summary(model2)$coefficients
 ```
 
 As we can see from the above example, the models are giving different coefficients because of the difference in formula.
+
+If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
