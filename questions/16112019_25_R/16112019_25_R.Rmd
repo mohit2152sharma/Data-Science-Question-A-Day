@@ -23,6 +23,12 @@ Given a linear model, `mod <- lm(mpg ~ wt, data = mtcars)`, how would you extrac
   3. Both are correct
 
 #### Answer
+If in case, confusion arises about how to extract variables from a model (not just linear). Try this approach:
+
+  1. see what all the model is returning and where the respective parameter is stored, using str()
+  2. see the type of element where the respective parameter is stored like list, dataframe, matrix etc.
+  3. Once you know that, it just becomes a question of accessing elements from list, dataframe etc.
+  
 Let's first create the model and look at how the summary of `mod` looks like.
 ```{r}
 mod = lm(mpg ~ wt, data = mtcars)
@@ -53,7 +59,7 @@ Now, need to extract estimate of `wt`, will start by checking the object class o
 ```{r}
 class(coeff_wt)
 ```
-Ahh, it's a matrix and there are multiple ways to index matrix.
+It's a matrix and there are multiple ways to index matrix.
   1. Using integer indexing:
 ```{r}
 estimate = coeff_wt[2,1]
@@ -69,6 +75,17 @@ Summarizing the whole operation in single command
 ```{r}
 mod = lm(mpg ~ wt, data = mtcars)
 summary(mod)$coefficients['wt', 'Estimate']
+```
+
+#### Edit
+As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using `summary()`. 
+```{r}
+mod = lm(mpg ~ wt, data = mtcars)
+mod$coefficients[['wt']]
+```
+``` {r}
+#from tidyverse
+coef(mod)[['wt']]
 ```
 
 Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>

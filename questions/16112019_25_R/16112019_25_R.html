@@ -256,6 +256,12 @@ $(document).ready(function () {
 </div>
 <div id="answer" class="section level4">
 <h4>Answer</h4>
+<p>If in case, confusion arises about how to extract variables from a model (not just linear). Try this approach:</p>
+<ol style="list-style-type: decimal">
+<li>see what all the model is returning and where the respective parameter is stored, using str()</li>
+<li>see the type of element where the respective parameter is stored like list, dataframe, matrix etc.</li>
+<li>Once you know that, it just becomes a question of accessing elements from list, dataframe etc.</li>
+</ol>
 <p>Let’s first create the model and look at how the summary of <code>mod</code> looks like.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod =<span class="st"> </span><span class="kw">lm</span>(mpg ~<span class="st"> </span>wt, <span class="dt">data =</span> mtcars)
 results =<span class="st"> </span><span class="kw">summary</span>(mod)
@@ -336,7 +342,7 @@ coeff_wt</code></pre></div>
 <p>Now, need to extract estimate of <code>wt</code>, will start by checking the object class of coeff_wt.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(coeff_wt)</code></pre></div>
 <pre><code>## [1] &quot;matrix&quot;</code></pre>
-<p>Ahh, it’s a matrix and there are multiple ways to index matrix. 1. Using integer indexing:</p>
+<p>It’s a matrix and there are multiple ways to index matrix. 1. Using integer indexing:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">estimate =<span class="st"> </span>coeff_wt[<span class="dv">2</span>,<span class="dv">1</span>]
 estimate</code></pre></div>
 <pre><code>## [1] -5.344472</code></pre>
@@ -349,6 +355,16 @@ estimate</code></pre></div>
 <p>Summarizing the whole operation in single command</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod =<span class="st"> </span><span class="kw">lm</span>(mpg ~<span class="st"> </span>wt, <span class="dt">data =</span> mtcars)
 <span class="kw">summary</span>(mod)$coefficients[<span class="st">'wt'</span>, <span class="st">'Estimate'</span>]</code></pre></div>
+<pre><code>## [1] -5.344472</code></pre>
+</div>
+<div id="edit" class="section level4">
+<h4>Edit</h4>
+<p>As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using <code>summary()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod =<span class="st"> </span><span class="kw">lm</span>(mpg ~<span class="st"> </span>wt, <span class="dt">data =</span> mtcars)
+mod$coefficients[[<span class="st">'wt'</span>]]</code></pre></div>
+<pre><code>## [1] -5.344472</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#from tidyverse</span>
+<span class="kw">coef</span>(mod)[[<span class="st">'wt'</span>]]</code></pre></div>
 <pre><code>## [1] -5.344472</code></pre>
 <p>Thanks for reading. If you like the question, how about some love and coffee: <a href="https://www.buymeacoffee.com/NgFs2zX">Buy me a coffee</a></p>
 </div>
