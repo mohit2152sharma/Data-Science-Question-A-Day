@@ -249,8 +249,8 @@ $(document).ready(function () {
 <h4>Question</h4>
 <p>Given a linear model, <code>mod &lt;- lm(mpg ~ wt, data = mtcars)</code>, how would you extract the estimate of <code>wt</code>?</p>
 <ol style="list-style-type: decimal">
-<li>summary(mod)$coefficients[‘wt’, ‘Estimate’]</li>
-<li>summary(mod)$coefficients[2,1]</li>
+<li><code>summary(mod)$coefficients['wt', 'Estimate']</code></li>
+<li><code>summary(mod)$coefficients[2,1]</code></li>
 <li>Both are correct</li>
 </ol>
 </div>
