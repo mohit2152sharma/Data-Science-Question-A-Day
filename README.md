@@ -11,3 +11,5 @@ You can use the following links, to access the questions and answers and if you 
 | 21 | 12-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/12112019_21_DS/12112019_21_DS.html) |
 | 22 | 13-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/13112019_22_R/13112019_22_R.html) |
 | 23 | 14-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/14112019_23_DS/14112019_23_DS.html) |
+| 24 | 15-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/15112019_24_DS/15112019_24_R.html) |
+| 25 | 16-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/16112019_25_DS/16112019_25_R.html) |

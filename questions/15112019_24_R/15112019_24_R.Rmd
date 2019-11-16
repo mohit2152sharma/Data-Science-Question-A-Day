@@ -1,0 +1,21 @@
+---
+title: "Question 24"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "15 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+#### Question
+Using `for()` loops in R is a bad idea?
+
+  1. True
+  2. False
+  3. It depends
+  
+#### Answer
+Answer will be updated soon.

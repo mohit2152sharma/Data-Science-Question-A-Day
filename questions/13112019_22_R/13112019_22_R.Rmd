@@ -4,7 +4,10 @@ author: |
   | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
   | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
 date: "13 November 2019"
-output: html_document
+output: 
+  html_document:
+    theme: united
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
