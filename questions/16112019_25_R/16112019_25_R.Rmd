@@ -78,7 +78,7 @@ summary(mod)$coefficients['wt', 'Estimate']
 ```
 
 #### Edit
-As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using `summary()`. 
+As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using `summary()`. `mod` is a list, to index list I can use `$`, `coefficients` has named attribute `wt`, which you can use to get wt coefficient.
 ```{r}
 mod = lm(mpg ~ wt, data = mtcars)
 mod$coefficients[['wt']]

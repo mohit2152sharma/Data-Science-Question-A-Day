@@ -359,7 +359,7 @@ estimate</code></pre></div>
 </div>
 <div id="edit" class="section level4">
 <h4>Edit</h4>
-<p>As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using <code>summary()</code>.</p>
+<p>As it happens, there is a better way to index. Thanks to people on twitter. You can skip, using <code>summary()</code>. <code>mod</code> is a list, to index list I can use <code>$</code>, <code>coefficients</code> has named attribute <code>wt</code>, which you can use to get wt coefficient.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mod =<span class="st"> </span><span class="kw">lm</span>(mpg ~<span class="st"> </span>wt, <span class="dt">data =</span> mtcars)
 mod$coefficients[[<span class="st">'wt'</span>]]</code></pre></div>
 <pre><code>## [1] -5.344472</code></pre>
