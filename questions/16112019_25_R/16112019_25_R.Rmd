@@ -18,6 +18,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Given a linear model, `mod <- lm(mpg ~ wt, data = mtcars)`, how would you extract the estimate of `wt`?
 
+Source: <a href='https://adv-r.hadley.nz/vectors-chap.html'>Advanced R by Hadley Wickham</a>
+
   1. `summary(mod)$coefficients['wt', 'Estimate']`
   2. `summary(mod)$coefficients[2,1]`
   3. Both are correct

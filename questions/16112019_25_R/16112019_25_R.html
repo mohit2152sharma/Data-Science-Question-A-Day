@@ -248,6 +248,7 @@ $(document).ready(function () {
 <div id="question" class="section level4">
 <h4>Question</h4>
 <p>Given a linear model, <code>mod &lt;- lm(mpg ~ wt, data = mtcars)</code>, how would you extract the estimate of <code>wt</code>?</p>
+<p>Source: <a href="https://adv-r.hadley.nz/vectors-chap.html">Advanced R by Hadley Wickham</a></p>
 <ol style="list-style-type: decimal">
 <li><code>summary(mod)$coefficients['wt', 'Estimate']</code></li>
 <li><code>summary(mod)$coefficients[2,1]</code></li>
