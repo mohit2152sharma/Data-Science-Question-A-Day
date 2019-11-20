@@ -12,28 +12,34 @@ output:
 
 #### Question
 
-`which()` operator in R is a handy func when it comes to subsetting. It converts boolean representation to integer representation. Should I expect same result from following expression?
-
+`which()` operator in R is a handy func when it comes to subsetting in df. It converts boolean representation to integer representation. Like for example:
+```{r}
+x = c(1,0,0,0,1,1,0)
+y = x<1
+x[which(y)]
+x[y]
+```
+Should I expect a and b to be same in following expression?
 ```{r, results=FALSE}
 x = c(1,0,0,0,1,1,0)
 y = x < 0
 
-which(y)
-y
+a = x[!which(y)]
+b = x[!y]
 ```
 
 #### Answer
 
-No, as `which()` coverts boolean representation to integer representation and returns the indices which are TRUE for a logical object.
+No, as `which()` coverts boolean representation to integer representation and returns the indices which are TRUE for that logical object.
 So if I run the above example, I get the following output:
 ```{r}
 x = c(1,0,0,0,1,1,0)
 y = x < 0
 
-which(y)
-y
+x[!which(y)]
+x[!y]
 ```
-`which(y)` returns a zero vector whereas `y` returns a vector of same length as x with all indices being FALSE, which is expected as y is always FALSE.
+`which(y)` returns a zero vector whereas `y` is a vector of same length as x with all indices being FALSE, which is expected as y is always FALSE.
 What's happening behind the scene with `which()` is, `which(y)` tries to find the indices where the logical operation is TRUE but since it's always false `which(y)` doesn't return anyting.
 
 This information is often useful when subsetting a dataframe (or a list etc) where you wish to exclude certain values using a logical operation but you are not sure if that logical operation has a possibility of being FALSE at all instances because `x[!which(y)]` would yield different results compared to `x[!y]`.

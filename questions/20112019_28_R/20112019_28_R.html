@@ -247,24 +247,31 @@ $(document).ready(function () {
 
 <div id="question" class="section level4">
 <h4>Question</h4>
-<p><code>which()</code> operator in R is a handy func when it comes to subsetting. It converts boolean representation to integer representation. Should I expect same result from following expression?</p>
+<p><code>which()</code> operator in R is a handy func when it comes to subsetting in df. It converts boolean representation to integer representation. Like for example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+y =<span class="st"> </span>x&lt;<span class="dv">1</span>
+x[<span class="kw">which</span>(y)]</code></pre></div>
+<pre><code>## [1] 0 0 0 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[y]</code></pre></div>
+<pre><code>## [1] 0 0 0 0</code></pre>
+<p>Should I expect a and b to be same in following expression?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)
 y =<span class="st"> </span>x &lt;<span class="st"> </span><span class="dv">0</span>
 
-<span class="kw">which</span>(y)
-y</code></pre></div>
+a =<span class="st"> </span>x[!<span class="kw">which</span>(y)]
+b =<span class="st"> </span>x[!y]</code></pre></div>
 </div>
 <div id="answer" class="section level4">
 <h4>Answer</h4>
-<p>No, as <code>which()</code> coverts boolean representation to integer representation and returns the indices which are TRUE for a logical object. So if I run the above example, I get the following output:</p>
+<p>No, as <code>which()</code> coverts boolean representation to integer representation and returns the indices which are TRUE for that logical object. So if I run the above example, I get the following output:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)
 y =<span class="st"> </span>x &lt;<span class="st"> </span><span class="dv">0</span>
 
-<span class="kw">which</span>(y)</code></pre></div>
-<pre><code>## integer(0)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y</code></pre></div>
-<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
-<p><code>which(y)</code> returns a zero vector whereas <code>y</code> returns a vector of same length as x with all indices being FALSE, which is expected as y is always FALSE. What’s happening behind the scene with <code>which()</code> is, <code>which(y)</code> tries to find the indices where the logical operation is TRUE but since it’s always false <code>which(y)</code> doesn’t return anyting.</p>
+x[!<span class="kw">which</span>(y)]</code></pre></div>
+<pre><code>## numeric(0)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[!y]</code></pre></div>
+<pre><code>## [1] 1 0 0 0 1 1 0</code></pre>
+<p><code>which(y)</code> returns a zero vector whereas <code>y</code> is a vector of same length as x with all indices being FALSE, which is expected as y is always FALSE. What’s happening behind the scene with <code>which()</code> is, <code>which(y)</code> tries to find the indices where the logical operation is TRUE but since it’s always false <code>which(y)</code> doesn’t return anyting.</p>
 <p>This information is often useful when subsetting a dataframe (or a list etc) where you wish to exclude certain values using a logical operation but you are not sure if that logical operation has a possibility of being FALSE at all instances because <code>x[!which(y)]</code> would yield different results compared to <code>x[!y]</code>.</p>
 <p>Thanks for reading. If you like the question, how about some love and coffee: <a href="https://www.buymeacoffee.com/NgFs2zX">Buy me a coffee</a></p>
 </div>
