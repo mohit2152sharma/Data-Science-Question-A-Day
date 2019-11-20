@@ -14,7 +14,7 @@ output:
 
 `which()` operator in R is a handy func when it comes to subsetting. It converts boolean representation to integer representation. Should I expect same result from following expression?
 
-```{r}
+```{r, results=FALSE}
 x = c(1,0,0,0,1,1,0)
 y = x < 0
 
