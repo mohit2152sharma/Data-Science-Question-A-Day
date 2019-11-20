@@ -1,0 +1,41 @@
+---
+title: "Question 28"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "20 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+#### Question
+
+`which()` operator in R is a handy func when it comes to subsetting. It converts boolean representation to integer representation. Should I expect same result from following expression?
+
+```{r}
+x = c(1,0,0,0,1,1,0)
+y = x < 0
+
+which(y)
+y
+```
+
+#### Answer
+
+No, as `which()` coverts boolean representation to integer representation and returns the indices which are TRUE for a logical object.
+So if I run the above example, I get the following output:
+```{r}
+x = c(1,0,0,0,1,1,0)
+y = x < 0
+
+which(y)
+y
+```
+`which(y)` returns a zero vector whereas `y` returns a vector of same length as x with all indices being FALSE, which is expected as y is always FALSE.
+What's happening behind the scene with `which()` is, `which(y)` tries to find the indices where the logical operation is TRUE but since it's always false `which(y)` doesn't return anyting.
+
+This information is often useful when subsetting a dataframe (or a list etc) where you wish to exclude certain values using a logical operation but you are not sure if that logical operation has a possibility of being FALSE at all instances because `x[!which(y)]` would yield different results compared to `x[!y]`.
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
