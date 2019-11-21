@@ -1,0 +1,40 @@
+---
+title: 'Question 21: if and ifelse in R'
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "21 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Question
+
+In base R, there are two quite similar ways to work with conditional statements. One is `if(condition) .... else ....` and the second is `ifelse(condition, TRUE Action, FALSE action)`.
+
+The difference between the two is that the first one works with scalars whereas second one works with vector also?
+
+### Answer
+
+Yes, the difference between the two is that the first one works with scalars whereas second one works with vector also. When you use the first one i.e. `if(condition) ..... else .....` on a vector you will see a warning message. Let's say for example, you want to find out which numbers in a vector are divisible by 5:
+```{r}
+x = c(5,4,3,5,1,10,2)
+if(x%%5==0) TRUE else FALSE
+```
+As you can see in the warning message, the condition is only evaluated based on the first element of vector which turned out to be TRUE. The `if` only works with single TRUE and FALSE, it dosen't recycle the condition to the same length as the input vector.
+
+If you are working with vectors, `ifelse()` should be the choice. For example:
+```{r}
+x = c(5,4,3,5,1,10,2)
+ifelse(x%%5==0, TRUE, FALSE)
+```
+
+References:<a href='https://adv-r.hadley.nz/control-flow.html'> Advanced R by Hadley Wickham</a>
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
