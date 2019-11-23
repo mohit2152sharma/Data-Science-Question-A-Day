@@ -1,0 +1,112 @@
+---
+title: 'Question 31: Super assignment operator'
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "22 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+Super assignment operator `<<-` can be used for assignment in parent environment. Which of the following is TRUE for the following code?
+
+  1. A = B = C
+  2. C > B > A
+  3. C < B < A
+
+```{r, results=FALSE}
+
+x <- 0
+
+f <- function(){
+  x <<- x + 1
+  x
+}
+
+#1st execution
+A = f()
+#2nd execution
+B = f()
+#3rd execution
+C = f()
+```
+
+
+### Answer
+
+`<<-` is known as super assignment operator. In contrast to the regular assignment operator `<-` which does the assignment in current environment, `<<-` does the assignment in parent environment. If in case it doesn't find the variable, it will create the variable in global environment. See for example below:
+
+I have defined a function `f` with a variable `y` in it to which I have assigned 1. If I try to access `y` outside function, I get the error, as `y` doesn't exist in global environment. It only exists in `f`'s environment.
+```{r, error=TRUE}
+f <- function(){
+  y <- 1
+}
+#function call
+f()
+y
+```
+But if I rewrite the above code using `<<-`, I don't get any error. `y` is now defined in global environment.
+```{r}
+f <- function(){
+  y <<- 1
+}
+#function call
+f()
+y
+```
+
+So for the above question, option $2.$ $C>B>A$ is correct.
+```{r}
+x <- 0
+
+f <- function(){
+  x <<- x + 1
+  x
+}
+
+#1st execution
+A = f()
+#2nd execution
+B = f()
+#3rd execution
+C = f()
+```
+
+As `C=3`, `B=2`, `A=1`. At the first execution, `f` returns `1` and also updates `x` in global environment to `1`. Similarly for the subsequent executions, `x` gets updated globally with an increment 1.
+```{r}
+A
+B
+C
+```
+
+In contrast, if I use `<-`, I would get `A=B=C=1`.
+```{r}
+x <- 0
+
+f <- function(){
+  x <- x + 1
+  x
+}
+
+#1st execution
+A = f()
+#2nd execution
+B = f()
+#3rd execution
+C = f()
+```
+
+```{r}
+A
+B
+C
+```
+
+
+References:<a href='https://adv-r.hadley.nz/control-flow.html'> Advanced R by Hadley Wickham</a>
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
