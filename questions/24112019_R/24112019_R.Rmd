@@ -1,5 +1,5 @@
 ---
-title: 
+title: 'Scoping in R'
 author: |
   | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
   | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
@@ -11,7 +11,36 @@ output:
 ---
 
 ### Question
+Although unadvisable, but it's interesting how scoping works in R. R allows function and variable to have same name. What does the following code return?
+
+Source: <a href='ahttps://adv-r.hadley.nz/functions.html'>Advanced R by Hadley Wickham</a>
+
+  1. Error
+  2. 110
+  3. 10
+
+```{r, results=FALSE}
+g09 <- function(x) x + 100
+g10 <- function() {
+  g09 <- 10
+  g09(g09)
+}
+g10()
+```
+
 
 ### Answer
+
+Correct answer is 110. 
+```{r}
+g09 <- function(x) x + 100
+g10 <- function() {
+  g09 <- 10
+  g09(g09)
+}
+g10()
+```
+This could only work when the function and variable are defined in different environments. When the function with same name is called, it ignores the non-functional objects like variables. In the above example, when function `g09()` is called, it igonres the variable `g09` and looks for the function object with `g09` name. Since both are defined in different environments, variable `g09` is defined in function `g10`'s environment, whereas `g09()` is defined in global environment, I don't get an error when executing the above code.
+
 
 Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
