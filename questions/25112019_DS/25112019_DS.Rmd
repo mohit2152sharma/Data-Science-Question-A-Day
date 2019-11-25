@@ -1,0 +1,29 @@
+---
+title: "Bootstrap"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "25 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+If we have $n$ data points, what is the probability that a given data point does not appear in a bootstrap sample?
+
+  1. $(1$ $-$ $(1/n))^n$
+  2. $(1/n)^n$
+  3. $1$ $-$ $(1/n)^n$
+
+### Answer
+
+In bootstrap we randomly select $n$ observations from a data set, with replacement i.e. a data point can be selected more than once. Bootstrap is a useful technique to find measures like variance, confidence intervals, prediction error etc associated with sampling estimates. 
+
+In the above question, we have $n$ data points. The probability of selecting one point is therefore $1/n$. The probability of not selecting that point is $1$ $-$ $(1/n)$. And this has to be repeated $n$ times. 
+
+So, the probability a data point doesn't appear in bootstrap sample is $(1$ $-$ $(1/n))^n$.
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
