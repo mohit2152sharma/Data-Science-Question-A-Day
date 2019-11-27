@@ -1,0 +1,30 @@
+---
+title: "Conditional Probability"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "26 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+A box contains 3 cards. One card is red on both sides, one card is green on both sides, and one card is red on one side and green on the other. One card is selected from the box at random, and the color on one side is observed. If this side is green, what is the probability that the other side of the card is also green?
+
+  1. $\frac {1}{2}$
+  2. $\frac {2}{3}$
+  3. None of the above
+  
+
+### Answer
+
+Let the card with both sides green be $G$ and let the sides be called $G_1$ and other side be $G_2$. Similary for card $R$ with both sides red, let the sides be $R_1$ and $R_2$. And for the last card $RG$ with one side green and one side red, let the sides be $R_3$ and $G_3$.
+
+It's given that the card selected has one side green. So the selected card could be $G$ with side $G_1$ or $G$ with side $G_2$ or $RG$ with side $G_3$. Out of these three scenarios, it's possible to get green on the other side in two of them. So the probability that the other side is also green is $\frac {2}{3}$.
+
+
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
