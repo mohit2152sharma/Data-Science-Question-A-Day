@@ -19,7 +19,7 @@ Source: All of Statistics by Larry A. Wasserman
 ```{r, echo=FALSE}
 
 data.frame('Disease' = c(0.0081, 0.009),
-           'No Disease' = c(0.09, 0.9010),
+           "No Disease" = c(0.09, 0.9010),
            row.names = c('positive', 'negative'))
 
 ```
