@@ -1,0 +1,36 @@
+---
+title: "Conditional Probability"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "29 November 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+A medical test for disease D has outcome positive or negative with following probabilities. Suppose you go for a test and get a positive. What is the probability that you have a disease?
+
+Source: All of Statistics by Larry A. Wasserman
+
+```{r, echo=FALSE}
+
+data.frame('Disease' = c(0.0081, 0.009),
+           'No Disease' = c(0.09, 0.9010),
+           row.names = c('positive', 'negative'))
+
+```
+
+
+### Answer
+
+From conditional probability:
+
+$$P(Disease|positive) = \frac {P(positive \cap Disease)} {P(positive)}$$
+$$P(Disease|positive) = \frac {0.0081}{0.0081+0.090}$$
+$$P(Disease|positive) \approx 0.08$$
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
