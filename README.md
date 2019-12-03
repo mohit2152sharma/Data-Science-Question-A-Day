@@ -23,3 +23,4 @@ You can use the following links, to access the questions and answers and if you 
 | 35 | 27 November 2019 | [Subsetting in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/27112019_R/27112019_R.html) |
 | 36 | 28 November 2019 | [Environments in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/28112019_R/28112019_R.html) |
 | 37 | 29 November 2019 | [Conditional Probability](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/29112019_DS/29112019_DS.html) |
+| 38 | 03 December 2019 | [Independence](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/03122019_DS/03122019_DS.html) |

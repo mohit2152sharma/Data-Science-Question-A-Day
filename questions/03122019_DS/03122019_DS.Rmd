@@ -1,0 +1,34 @@
+---
+title: "Independence"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "03 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+Suppose there are two disjoint events A and B. Each of them has positive probability. What can you say about independence of A and B?
+
+  1. Both are independent
+  2. They are not independent
+  3. Can't say anything
+
+### Answer
+
+Two events are said to be independent if
+$$P(A \cap B) = P(A)P(B)$$
+In the case of disjoint events:
+$$P(A \cap B) = P(\phi) = 0$$ where $\phi$ is null set.
+
+Whereas: 
+$$P(A)P(B) > 0$$
+
+So, $P(A \cap B) \ne P(A)P(B)$. Hence they are not independent.
+
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
