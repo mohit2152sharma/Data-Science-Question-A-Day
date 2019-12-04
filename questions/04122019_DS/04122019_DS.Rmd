@@ -1,0 +1,38 @@
+---
+title: "Interpreting Linear and Logistic Regression"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "04 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+With linear regression, intercept = 10.06 & coefficient = 0.5. With logistic regression, intercept = 5.87 & coefficient = 0.2. Which of the following is True?
+
+  1. If using linear regression, one unit increase in X is associated with an increase in Y by 0.5
+  2. If using logistic regression, one unit increase in X is associated with an increase in Y by 0.2.
+
+
+### Answer
+
+Only first statement is true.
+
+With linear regression:
+$$y = \beta_0 + \beta_1*x$$
+And its given that $\beta_0 = 10.06$ and $\beta_1 = 0.5$. So,
+$$y = 10.06 + 0.5*x$$
+So if $x$ is increased by 1, then $y$ increases by 0.5
+
+With logistic regression:
+$$log(\frac {p(y)}{1-p(y)}) = \beta_0 + \beta_1*x$$
+And it is given that $\beta_0 = 5.87$ and $\beta_1 = 0.2$. So
+$$log(\frac {p(y)}{1-p(y)}) = 5.87 + 0.2*x$$
+So if $x$ is increased by 1, the probability of $y$ is going to increase. A one unit increase $x$ is associated with an increase in log odds of $y$ by 0.2.
+
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
