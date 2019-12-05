@@ -1,0 +1,48 @@
+---
+title: "CDF of Normal Distribution"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "05 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+Given the following CDFs plot, what can you say about normal distributions: $y_1$, $y_2$, $y_3$?
+
+  1. $\mu_1$ > $\mu_2$ > $\mu_3$
+  2. $\mu_1$ < $\mu_2$ < $\mu_3$
+
+```{r, echo=FALSE,warning=FALSE, message=FALSE}
+library(tidyverse)
+library(ggthemr)
+library(latex2exp)
+
+x = seq(-10,10, length.out = 1000)
+y1 = pnorm(x, mean = -2, sd = 4)
+y2 = pnorm(x, mean = 0, sd = 1)
+y3 = pnorm(x, mean = 2, sd= 2.5)
+df = tibble(x,y1,y2,y3)
+cols = c('y1' = 'black', 'y2' = 'orange', 'y3' = 'blue')
+
+labels = data.frame(x = c(-3,-1.5,3), y=c(0.5,0.25,0.5), text = c('y1', 'y2', 'y3'))
+ggthemr('dust')
+ggplot(df, aes(x)) +
+  geom_line(aes(y=y1, color='y1')) +
+  geom_line(aes(y=y2, color='y2')) +
+  geom_line(aes(y=y3, color='y3')) +
+  geom_text(data = labels, aes(label=text, x= x, y= y)) +
+  theme(legend.position = 'None') + 
+  labs(x =TeX("$x$"), y = TeX("$F_x(x)$"), title='CDFs')
+
+```
+
+### Answer
+$\mu_1$ < $\mu_2$ < $\mu_3$ is correct. 
+As for the CDFs of normal distributions, the curve is bounded between 0 and 1, as the $\sigma$ increases the curve becomes more and more flat (towards x axis) and as the $\mu$ increases the curve shifts more and more towards right. 
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>

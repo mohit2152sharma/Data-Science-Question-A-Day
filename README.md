@@ -25,3 +25,4 @@ You can use the following links, to access the questions and answers and if you 
 | 37 | 29 November 2019 | [Conditional Probability](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/29112019_DS/29112019_DS.html) |
 | 38 | 03 December 2019 | [Independence](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/03122019_DS/03122019_DS.html) |
 | 39 | 04 December 2019 | [Interpreting Linear and Logistic Regression](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/04122019_DS/04122019_DS.html) |
+| 40 | 05 December 2019 | [CDF of Normal Distribution](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/05122019_R/05122019_R.html) |
