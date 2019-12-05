@@ -45,4 +45,13 @@ ggplot(df, aes(x)) +
 $\mu_1$ < $\mu_2$ < $\mu_3$ is correct. 
 As for the CDFs of normal distributions, the curve is bounded between 0 and 1, as the $\sigma$ increases the curve becomes more and more flat (towards x axis) and as the $\mu$ increases the curve shifts more and more towards right. 
 
+As for the above question, following is the code for $y_1$, $y_2$ and $y_3$:
+
+```{r, eval=FALSE}
+y1 = pnorm(x, mean = -2, sd = 4)
+y2 = pnorm(x, mean = 0, sd = 1)
+y3 = pnorm(x, mean = 2, sd= 2.5)
+```
+
+
 Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
