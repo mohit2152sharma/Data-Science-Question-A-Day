@@ -1,0 +1,64 @@
+---
+title: "Normal Distribution"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "06 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+
+$X$ is a normal distribution with $N(0,2)$ and PDF $f_X$. $Z$ is standard normal distribution with $N(0,1)$ and PDF $f_Z$. If $$f_X(2) = \frac{1}{2}f_Z(x_\circ)$$, what is $x_\circ$?
+
+  1. 1
+  2. 2
+  3. None of the above
+
+### Answer
+
+Correct answer: $x_\circ=1$
+
+Let CDF of standard normal distribution, $Z$ be $\Phi(x)$. Any other normal random variable with mean $\mu$ and standard deviation $\sigma$ can be written as $X = \sigma Z + \mu$. 
+So CDF of $X$ (denoted by $F_X(x)$):
+
+$$\begin{aligned}
+F_X(x) &= P(X \leq x) \\
+F_X(x) &= P(\sigma Z + \mu \leq x) \\
+F_X(x) &= P(Z \leq \frac {x - \mu}{\sigma}) \\
+F_X(x) &= \Phi(\frac {x - \mu}{\sigma})
+\end{aligned}
+$$
+
+and PDF of X can be find by differentiating $F$.
+$$\begin{aligned}
+f(x) &= \frac {d}{d(x)} F_X(x) \\
+f(x) &= \frac {d}{d(x)} \Phi(\frac {x - \mu}{\sigma}) \\
+f(x) &= \frac {1}{\sigma} \Phi'(\frac {x - \mu}{\sigma}) \\
+f(x) &= \frac {1}{\sigma} f_Z(\frac {x - \mu}{\sigma})
+\end{aligned}
+$$
+
+So for the above question, it is given for $X$ that $\mu = 0$ and $\sigma = 2$, plugging in values:
+$$\begin{aligned}
+f(x) &= \frac {1}{2}f_Z(\frac {x}{2}) \\
+f_X(2) &= \frac {1}{2}f_Z(\frac {2}{2}) = \frac{1}{2}f_Z(x_\circ) \\
+&\Rightarrow x_\circ = 1
+\end{aligned}
+$$
+
+
+In R:
+```{r}
+dnorm(2,0,2)
+```
+```{r}
+0.5*(dnorm(1,0,1))
+```
+
+
+
+Thanks for reading. If you like the question, how about some love and coffee: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy me a coffee</a>
