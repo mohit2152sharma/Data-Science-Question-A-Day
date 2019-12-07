@@ -9,7 +9,7 @@ output:
     theme: united
     highlight: tango
     includes:
-      in_header: "ga_script.html"
+      in_header: "../../analytics/ga_script.html"
 ---
 
 ### Question
