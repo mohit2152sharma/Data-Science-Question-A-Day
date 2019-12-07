@@ -1,0 +1,41 @@
+---
+title: "data.frame's drop argument in R" 
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "07 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+### Question
+Is `x` a dataframe of column one or a numeric vector?
+```{r, eval=FALSE}
+x = mtcars[, 'mpg']
+```
+
+### Answer
+`x` is a numeric vector.
+```{r}
+x = mtcars[,'mpg']
+is.vector(x, mode='numeric')
+```
+To get dataframe after subsetting, use the argument `drop=FALSE`.
+```{r}
+x = mtcars[,'mpg', drop=FALSE]
+class(x)
+```
+This behaviour can often be source of bugs when writing a code pipeline, as intuitively you would expect it to return a one column dataframe. To avoid flattening of subsets, remember to use `drop=FALSE`.
+
+Other option could be to use `tibble`, which always return a tibble.
+```{r}
+mtcars = dplyr::as_tibble(mtcars)
+x = mtcars[, 'mpg']
+class(x)
+```
+
+
+
+Thanks for reading. If you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>

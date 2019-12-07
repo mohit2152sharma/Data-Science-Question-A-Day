@@ -2,7 +2,7 @@
 
 Accompanying repository of the twitter account [data science question a day](https://twitter.com/data_question). This is a social experiment to teach about data science using twitter. Every day a question is posted on the account related to datas science with options in poll format. The answer to the question is posted next day, mostly after 12-14 hours.
 
-You can use the following links, to access the questions and answers and if you like my work you can support it <a href='https://www.buymeacoffee.com/NgFs2zX'>buying me a coffee</a>
+You can use the following links to access the questions and answers and if you like my work you can support it by adding tips on <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>
 
 | Question Number | Date | Link |
 | :---: | :---: | :---: |
@@ -27,3 +27,4 @@ You can use the following links, to access the questions and answers and if you 
 | 39 | 04 December 2019 | [Interpreting Linear and Logistic Regression](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/04122019_DS/04122019_DS.html) |
 | 40 | 05 December 2019 | [CDF of Normal Distribution](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/05122019_DS/05122019_DS.html) |
 | 41 | 06 December 2019 | [Normal Distribution](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/06122019_DS/06122019_DS.html) |
+| 42 | 07 December 2019 | [data.frame's drop argument in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/07122019_R/07122019_R.html) |
