@@ -1,0 +1,32 @@
+---
+title: "Correlation coefficient"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "09 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+In a linear regression setting with $Y$ and $(X_1, X_2, X_3,...., X_n)$. The correlation coefficient between $X_2$ and $Y$ was found to be $-0.90$. 
+
+  1. Relationship between $X_2$ and $Y$ is strong
+  2. Relationship between $X_2$ and $Y$ is weak
+  3. Relationship between $X_2$ and $Y$ is neutral
+
+### Answer
+Relationship between $X_2$ and $Y$ is strong.
+
+The correlation coefficient($\rho$) ranges from $[-1,1]$. As the value of $\rho$ approaches 1, the strength of positive relationship (between $X$ and $Y$) increases whereas if $\rho$ approaches -1, the strength of negtaive relationship increases. 
+
+If $\rho$ is equal to zero, then $X$ and $Y$ are said to be uncorrelated. This also implies that $X$ and $Y$ are independent, although vice versa is not true, as $\rho$ measures only the strength of linear relationship.
+
+
+Thanks for reading. If you find a correction, hit me up on <a href='https://twitter.com/data_question'>Twitter</a>.
+
+If you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>
