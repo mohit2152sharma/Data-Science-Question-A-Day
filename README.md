@@ -30,3 +30,5 @@ You can use the following links to access the questions and answers and if you l
 | 42 | 07 December 2019 | [data.frame's drop argument in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/07122019_R/07122019_R.html) |
 | 43 | 08 December 2019 | [Expectations](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/08122019_DS/08122019_DS.html) |
 | 44 | 09 December 2019 | [Correlation coefficient](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/09122019_DS/09122019_DS.html) |
+| 45 | 22 November 2019 | [Question 30: Variable Scoping](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
+| 46 | 10 December 2019 | [Uniform Distribution](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/10122019_DS/10122019_DS.html) |
