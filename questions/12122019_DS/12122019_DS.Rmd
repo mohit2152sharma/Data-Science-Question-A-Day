@@ -1,0 +1,80 @@
+---
+title: "Linear Least Squares Fitting"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "12 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+Which of the following offsets is used in linear least squares fitting technique? (Assuming $Y\sim X$)?
+
+```{r, message=FALSE, warning=FALSE,echo=FALSE, fig.asp=1}
+library(tidyverse)
+library(ggthemr)
+set.seed(1)
+x = c(1:100)
+e = 10*rnorm(100)
+y = x + e
+model = lm(y~x)
+
+df = tibble('x' = x, 'y' = y, 'fitted_values'=model$fitted.values)
+
+#vertical line segments
+ggthemr('dust')
+ggplot(df, aes(x)) +
+  geom_point(aes(y=y)) +
+  geom_line(aes(y=fitted_values)) +
+  geom_segment(aes(x=x, y=y, xend=x, yend=fitted_values)) + 
+  labs(title='Vertical offsets') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank()) +
+  coord_fixed()
+
+ggsave('vertical_offset_12122019.jpeg', width=200, units='mm')
+
+#perpendicualr line segments
+perp.segment.coord <- function(x0, y0, lm.mod){
+  #finds endpoint for a perpendicular segment from the point (x0,y0) to the line
+  # defined by lm.mod as y=a+b*x
+  a <- coef(lm.mod)[1]  #intercept
+  b <- coef(lm.mod)[2]  #slope
+  x1 <- (x0+b*y0-a*b)/(1+b^2)
+  y1 <- a + b*x1
+  list(x0=x0, y0=y0, x1=x1, y1=y1)
+}
+
+ss <- perp.segment.coord(x, y, model)
+df$perp_x = ss$x1
+df$perp_y = ss$y1
+
+ggplot(df, aes(x)) +
+  geom_point(aes(y=y)) +
+  geom_line(aes(y=fitted_values)) +
+  geom_segment(aes(x=x, y=y, xend=perp_x, yend=perp_y)) +
+  labs(title='Perpendicular offsets') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank()) +
+  coord_fixed()
+ggsave('perpendicualr_offsets_12122019.jpeg', width=200, units='mm')
+
+```
+
+
+### Answer
+Vertical Offsets
+
+In a linear regression setting, the most commonly used method to find the coefficients is by minimizing the sum of squares of residuals. The sum of squares of residuals is defined as:
+$$R^2 = \sum[y_i- \hat{y_i}]^2$$.
+And $y_i - \hat{y_i}$ is nothing but vertical offset. 
+
+To find the coefficients, let's say for: $y = \beta_0 + \beta_1x$, minimize $R^2$ by differentiating with respect to $\beta_0$ and $\beta_1$ and equating the resulting equations to zero.
+
+
+<span style="color:blue">Thanks for reading. If you find a correction, hit me up on <a href='https://twitter.com/data_question'>Twitter</a> and if you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a></span>
