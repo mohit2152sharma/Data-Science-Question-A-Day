@@ -1,0 +1,38 @@
+---
+title: "Matrices in R"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "11 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+Using the following command to create matrix in R, what would be the output?
+```{r, eval=FALSE}
+matrix(c(1:9), nrow=3, ncol=3)
+```
+
+  1. Option A
+```{r, echo=FALSE, comment=NA}
+matrix(c(1:9), nrow=3, ncol=3, byrow=TRUE)
+```
+  2. Option 2
+```{r,echo=FALSE,comment=NA}
+matrix(c(1:9), nrow=3, ncol=3)
+```
+
+### Answer
+
+The default behaviour of `matrix()` function is to fill the matrix by column. So option B is True, to fill the matrix by rows, one has the use `byrow` argument and set it to `TRUE`.
+```{r, comment=NA}
+matrix(c(1:9), nrow=3, ncol=3, byrow=TRUE)
+```
+
+
+Thanks for reading. If you find a correction, hit me up on <a href='https://twitter.com/data_question'>Twitter</a> and if you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>

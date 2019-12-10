@@ -32,3 +32,4 @@ You can use the following links to access the questions and answers and if you l
 | 44 | 09 December 2019 | [Correlation coefficient](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/09122019_DS/09122019_DS.html) |
 | 45 | 22 November 2019 | [Question 30: Variable Scoping](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
 | 46 | 10 December 2019 | [Uniform Distribution](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/10122019_DS/10122019_DS.html) |
+| 47 | 11 December 2019 | [Matrices in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/11122019_R/11122019_R.html) |
