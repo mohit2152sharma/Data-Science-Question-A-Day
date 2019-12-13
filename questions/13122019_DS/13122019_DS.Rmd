@@ -1,0 +1,72 @@
+---
+title: "Linear Reg: Sum of residuals"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "13 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+Which of the following is true about the sum of residuals of the two linear regression models shown in following graph?
+*(s(x): sum of residuals of x)*
+
+  1. s(A) > s(B)
+  2. s(A) = s(B)
+  3. s(A) < s(B)
+  
+Reference: <a href='https://math.stackexchange.com/questions/494181/why-the-sum-of-residuals-equals-0-when-we-do-a-sample-regression-by-ols'>StackExchange</a>
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+library(ggthemr)
+library(patchwork)
+
+model1 = lm(mpg~ disp, data=mtcars)
+model2 = lm(mpg~ hp, data=mtcars)
+
+ggthemr('dust')
+
+plot_func = function(model, df, x0, y0, label){
+  ggplot(df, aes(x=eval(parse(text=x0)))) +
+    geom_point(aes(y=eval(parse(text=y0))), col='black') +
+    geom_line(aes(y = model$fitted.values)) +
+    labs(title = paste(label, 'Model: ', y0,'~',x0, sep=''),
+         x = x0, y=y0) +
+    theme(axis.text = element_blank(),
+          axis.ticks = element_blank())
+}
+
+p1 = plot_func(model1, mtcars, 'disp', 'mpg', 'A) ')
+p2 = plot_func(model2, mtcars, 'hp', 'mpg', 'B) ')
+
+p1 + p2
+
+ggsave('13122019.jpeg')
+
+```
+
+
+### Answer
+Sum of residuals are zero, so option 2 is correct. 
+
+Take for example, a simple linear regression of the form $\hat{y} = \hat{\beta_0} + \hat\beta_1x$. The unknown coeffiecients are estimated by minimzing the sum of squares of residuals i.e.
+$$ <\hat \beta_0, \hat \beta_1> = minimize(\sum(y -\hat y)^2)$$
+To minimize, partially differentiate the RHS with respect to $\hat\beta_0$ and $\hat\beta_1$ and equate it to zero. When differentiating with respect to $\hat\beta_0$:
+$$\begin{aligned}
+\frac {d}{d\hat\beta_0}(\sum(y -\hat y)^2) &= 0 \\
+\frac {d}{d\hat\beta_0}(\sum(y - \hat{\beta_0} + \hat\beta_1x)^2 &= 0 \\
+-2\sum(y - \hat{\beta_0} + \hat\beta_1x) &= 0 \\
+-2\sum(y - \hat y) &= 0 \\
+-2\sum residuals &= 0 \Rightarrow \sum residuals = 0
+\end{aligned}
+$$
+This would fail i.e. sum of residuals not equal to zero, if there is no constant term in our linear regression model.
+
+
+Thanks for reading. If you find a correction, hit me up on <a href='https://twitter.com/data_question'>Twitter</a> and if you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>
