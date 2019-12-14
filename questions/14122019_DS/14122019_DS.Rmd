@@ -1,0 +1,29 @@
+---
+title: "R square and independent variables"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "14 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+I have a linear model. I add a feature to the model and retrain it. 
+
+  1. If $R^2$ increases, feature is significant
+  2. If $R^2$ decreases, feature is not significant
+  3. Can't say anything about significance with $R^2$
+
+### Answer
+
+We can't comment on significance of a feature with $R^2$. The $R^2$ is bound to increase (except collinear features, where it stays the same) as we add more and more features. 
+
+The significance of a feature can be interpreted from it's p value, the lower the p value, the more significant it is.
+
+
+<span style='color:blue'>Thanks for reading. If you find a correction or would like to know more, hit me up on <a href='https://twitter.com/data_question'>Twitter</a> and if you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a></span>

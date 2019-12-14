@@ -34,3 +34,5 @@ You can use the following links to access the questions and answers and if you l
 | 46 | 11 December 2019 | [Matrices in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/11122019_R/11122019_R.html) |
 | 47 | 12 December 2019 | [Linear Least Squares Fitting](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/12122019_DS/12122019_DS.html) |
 | 48 | 13 December 2019 | [Linear Reg- Sum of residuals](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/13122019_DS/13122019_DS.html) |
+| 49 | 14 December 2019 | [R square and independent variables](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/14122019_DS/14122019_DS.html) |
+| 50 | 22 November 2019 | [Question 30: Variable Scoping](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
