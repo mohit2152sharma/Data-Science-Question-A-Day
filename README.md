@@ -15,7 +15,7 @@ You can use the following links to access the questions and answers and if you l
 | 25 | 16-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/16112019_25_R/16112019_25_R.html) |
 | 28 | 20-11-2019 | [Question](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/20112019_28_R/20112019_28_R.html) |
 | 29 | 21-11-2019 | [Question - if and ifelse in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/21112019_29_R/21112019_29_R.html) |
-| 30 | 22 November 2019 | [Question - Variable Scoping in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_29_R/22112019_30_R.html) |
+| 30 | 22 November 2019 | [Question - Variable Scoping in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
 | 31 | 23-11-2019 | [Question - Super Assignment operator in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/23112019_31_R/23112019_31_R.html) |
 | 32 | 24 November 2019 | [Scoping in R](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/24112019_R/24112019_R.html) |
 | 33 | 25 November 2019 | [Bootstrap](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/25112019_DS/25112019_DS.html) |
@@ -36,4 +36,3 @@ You can use the following links to access the questions and answers and if you l
 | 48 | 13 December 2019 | [Linear Reg- Sum of residuals](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/13122019_DS/13122019_DS.html) |
 | 49 | 14 December 2019 | [R square and independent variables](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/14122019_DS/14122019_DS.html) |
 | 50 | 15 December 2019 | [Outliers in Linear Reg](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/15122019_DS/15122019_DS.html) |
-| 51 | 22 November 2019 | [Question 30: Variable Scoping](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
