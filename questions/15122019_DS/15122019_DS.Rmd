@@ -57,6 +57,7 @@ ggsave('15122019.jpeg')
 
 
 ### Answer
+Correct answer:B
 
 Linear regression models are sensitive to outliers. For a simple linear regression of the form $y = \beta_0 + \beta_1x$, the coefficient estimate $\hat \beta_1$ which defines the slope the line is given by:
 $$\beta_1 =  \frac  {\sum (x_i - \bar x)(y_i - \bar y)}{\sum (x_i - \bar x)^2}$$
