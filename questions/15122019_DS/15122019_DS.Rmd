@@ -1,0 +1,65 @@
+---
+title: "Outliers in Linear Reg"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "15 December 2019"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+Which of the following points if removed from data could improve our linear model (represented by straight line)?
+
+  1. A
+  2. B
+  3. C
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(ggthemes)
+library(ggthemr)
+
+xaxis=1:50
+set.seed(1)
+yaxis = xaxis + 10 + 5*rnorm(50)
+
+df = tibble('x'=xaxis, 'y'=yaxis)
+
+df$y[25] = 60
+model = lm(y~x, df)
+
+ggthemr('dust')
+
+ggplot(df, aes(x=x)) +
+  geom_point(aes(y=y), color='black')+
+  geom_line(aes(y=model$fitted.values)) +
+  annotate(geom='point', x=25, y=60, color = 'red') +
+  annotate(geom='text', x=30, y=60, label='B', size=6) +
+  geom_curve(x=29, y=60, xend=25.5, yend=60, arrow= arrow(length=unit(0.1, 'inches'))) +
+  annotate(geom='point', x=45, y=df$y[45], color='red') +
+  annotate(geom='text', x=50, y=df$y[45] + 2, label='A', size=6) +
+  geom_curve(x=49, y=df$y[45], xend=45.4, yend=df$y[45], curvature=-0.4, arrow=arrow(length=unit(0.1, 'inches'))) +
+  annotate(geom='point', x=2, y=df$y[2], color='red') +
+  annotate(geom='text', x=2, y=df$y[2] + 7, label='C', size=6) +
+  geom_curve(x=2, y=df$y[2] +5, xend=2, yend=df$y[2] + 0.5, angle=180, arrow=arrow(length=unit(0.1, 'inches'))) + 
+  labs(x='X', y='Y', title='Model: Y~X') +
+  theme(axis.ticks= element_blank(),
+        axis.text=element_blank(),
+        plot.title = element_text(hjust=0.5)) 
+
+ggsave('15122019.jpeg')
+```
+
+
+### Answer
+
+Linear regression models are sensitive to outliers. For a simple linear regression of the form $y = \beta_0 + \beta_1x$, the coefficient estimate $\hat \beta_1$ which defines the slope the line is given by:
+$$\beta_1 =  \frac  {\sum (x_i - \bar x)(y_i - \bar y)}{\sum (x_i - \bar x)^2}$$
+Notice that $\beta_1$ is dependent on $(y_i - \bar y)$, whose absolute value increases as the outliers count increases, which then affects the slope of our linear model.
+
+<span style='color:blue'>Thanks for reading. If you find a correction or would like to know more, hit me up on <a href='https://twitter.com/data_question'>Twitter</a> and if you wish to support my work: <a href='https://www.buymeacoffee.com/NgFs2zX'>Buy a coffee</a></span>

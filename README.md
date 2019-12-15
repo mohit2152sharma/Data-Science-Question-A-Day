@@ -2,7 +2,7 @@
 
 Accompanying repository of the twitter account [data science question a day](https://twitter.com/data_question). This is a social experiment to teach about data science using twitter. Every day a question is posted on the account related to datas science with options in poll format. The answer to the question is posted next day, mostly after 12-14 hours.
 
-You can use the following links to access the questions and answers and if you like my work you can support it by adding tips on <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>
+You can use the following links to access the questions and answers and if you like my work you can support it by <a href='https://www.buymeacoffee.com/NgFs2zX'>buying a coffee</a>
 
 | Question Number | Date | Link |
 | :---: | :---: | :---: |
@@ -35,3 +35,5 @@ You can use the following links to access the questions and answers and if you l
 | 47 | 12 December 2019 | [Linear Least Squares Fitting](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/12122019_DS/12122019_DS.html) |
 | 48 | 13 December 2019 | [Linear Reg- Sum of residuals](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/13122019_DS/13122019_DS.html) |
 | 49 | 14 December 2019 | [R square and independent variables](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/14122019_DS/14122019_DS.html) |
+| 50 | 15 December 2019 | [Outliers in Linear Reg](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/15122019_DS/15122019_DS.html) |
+| 51 | 22 November 2019 | [Question 30: Variable Scoping](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/questions/22112019_30_R/22112019_30_R.html) |
