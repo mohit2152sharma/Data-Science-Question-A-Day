@@ -4,12 +4,12 @@ author: |
   | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
   | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
 date: "15 December 2019"
-output: 
+output:
   html_document:
-    theme: united
     highlight: tango
     includes:
-        in_header: "../../analytics/ga_script.html"
+      in_header: '../../analytics/ga_script.html'
+    theme: united
 ---
 
 ### Question
