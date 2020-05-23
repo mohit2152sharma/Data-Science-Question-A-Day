@@ -1,0 +1,54 @@
+---
+title: "Plotting Ratios"
+author: |
+  | Mohit Sharma: [LinkedIn](https://www.linkedin.com/in/mohit-sharma-82030487/), [Twitter](https://twitter.com/mohitsh48631107)
+  | [GitHub Site](https://mohit2152sharma.github.io/Data-Science-Question-A-Day/), [Repository](https://github.com/mohit2152sharma/Data-Science-Question-A-Day)
+date: "22 May 2020"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+    includes:
+        in_header: "../../analytics/ga_script.html"
+---
+
+### Question
+
+While working on an analysis, I computed some ratios. Now I wish to visualize them. Should I use logarithmic scale or arithmetic scale? For example, should I use option A or option B?
+
+(Arithmetic Scale here means plotting ratios as is)
+
+```{r, echo=FALSE,warning=FALSE, message=FALSE}
+library(dplyr)
+df = data.frame(
+  'x' = sample(c(1:100), 50),
+  'y' = sample(c(1:100), 50),
+  'letters' = c('A','B','C','D','E')
+) %>% mutate('arithmetic' = x/y, 'log' = log(x/y))
+
+ggthemr::ggthemr('dust')
+library(ggplot2)
+plot1 = ggplot(df, aes(arithmetic, letters)) + 
+  geom_point() +
+  labs(x='Ratio (as is)', y='Categories', title='Option B', subtitle='Arithmetic Scale')
+
+plot2 = ggplot(df, aes(log, letters)) +
+  geom_point() +
+  labs(x='Ratio (logarithmically scaled)', y='Categories', title='Option A', subtitle='Logarithmic Scale')
+
+library(patchwork)
+plot2+plot1
+
+ggsave(paste(format(Sys.Date(), "%d%m%Y"), '.jpeg'))
+
+```
+
+
+### Answer
+
+In general, choosing logarithmic scale makes sense for plotting ratios, because ratios behave differently when reflecting increases than decreases. The ratio $200/100$ is $200%$ above baseline, but $100/200$ is only $50%$ below, despite being a similar magnitude change.
+On arithmetic scale (as in Option B), the ratios which are less than 1, get squished into a finite region between 0 to 1, whereas ratios greater than 1 are stretched across the infinite region above 1.
+
+But on logarithmic scale, the unit ratios divide the plot symmetrically. For example, $log_2(2/1)=1$ and $log_2(1/2)=-1$, which have a similar magnitude change, are equally displaced with respect to unit ratio i.e $log_2(2/2)=0$. This symmetry addresses the visual imbalance of ratios on arithmetic scale.
+
+Thanks for reading. If you like the question, how about a tip: <a href='https://www.paypal.me/mohit2013'>PayPal TipJar</a>
